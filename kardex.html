@@ -1,0 +1,740 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es-419" xml:lang="es-419">
+<head><link href="stylek1.css" type="text/css" rel="stylesheet" /><link href="stylek2.css" type="text/css" rel="stylesheet" /><title>
+	Kardex
+</title>	
+    
+	<!--[if IE 5]>
+	<style type="text/css">		
+		.sidebarcontainer td, .sidebarcontainer tr {font-size:smaller;}		
+		#subnav a {height:1em;}
+	    body td, body th {font-size:0.78em;}		
+	</style>
+	<![endif]-->
+	<!--[if IE 7]>
+	<style type="text/css">		        
+       #rightcolumn{margin-right: -152px;}
+	</style>
+	<![endif]-->
+<style type="text/css">
+	.ctl00_mainmenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_mainmenu_1 { text-decoration:none; }
+	.ctl00_mainmenu_2 {  }
+	.ctl00_mainmenu_3 { border-style:none; }
+	.ctl00_mainmenu_4 {  }
+	.ctl00_mainmenu_5 { background-color:Transparent; }
+	.ctl00_mainmenu_6 { border-style:none; }
+	.ctl00_mainmenu_7 {  }
+	.ctl00_mainmenu_8 { border-style:none; }
+	.ctl00_mainmenu_9 {  }
+	.ctl00_subMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_subMenu_1 { text-decoration:none; }
+	.ctl00_subMenu_2 { width:24px; }
+	.ctl00_subMenu_3 { border-style:none; }
+	.ctl00_subMenu_4 {  }
+	.ctl00_subMenu_5 { background-color:Transparent;width:150px; }
+	.ctl00_subMenu_6 { color:Silver;border-style:none; }
+	.ctl00_subMenu_7 { border-color:Green;border-style:Solid; }
+	.ctl00_subMenu_8 { background-color:Transparent;border-color:Green;border-style:Solid;width:150px; }
+	.ctl00_subMenu_9 { border-style:none; }
+	.ctl00_subMenu_10 {  }
+	.ctl00_subMenu_11 { color:#FFFFC0;font-weight:bold;border-style:none; }
+	.ctl00_subMenu_12 {  }
+	.ctl00_subMenu_13 { border-style:none; }
+	.ctl00_subMenu_14 {  }
+	.ctl00_subMenu_15 { border-style:none; }
+	.ctl00_subMenu_16 { background-color:White; }
+
+</style></head>
+<body>
+	<form name="aspnetForm" method="post" action="kardex.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzU3NTc3NDc1D2QWAmYPZBYCAgMPZBYKAgEPDxYCHghJbWFnZVVybAUVfi9JbWFnZXMvbG9nb3MvMDkucG5nZGQCBQ88KwANAgAPFgIeC18hRGF0YUJvdW5kZ2QMFCsAAgUDMDowFCsAAhYQHgRUZXh0BQZJbmljaW8eBVZhbHVlBQZJbmljaW8eC05hdmlnYXRlVXJsBQ0vZGVmYXVsdC5hc3B4HgdUb29sVGlwBQZJbmljaW8eB0VuYWJsZWRnHgpTZWxlY3RhYmxlZx4IRGF0YVBhdGgFDS9kZWZhdWx0LmFzcHgeCURhdGFCb3VuZGcUKwAGBRMwOjAsMDoxLDA6MiwwOjMsMDo0FCsAAhYSHwMFB0FsdW1ub3MfCWceCFNlbGVjdGVkZx8CBQdBbHVtbm9zHwQFFS9BbHVtbm9zL2RlZmF1bHQuYXNweB8GZx8HZx8FBQdBbHVtbm9zHwgFFS9hbHVtbm9zL2RlZmF1bHQuYXNweGQUKwACFhAfAgUKQWNhZMOpbWljYR8DBQpBY2Fkw6ltaWNhHwQFFy9BY2FkZW1pY2EvZGVmYXVsdC5hc3B4HwUFCkFjYWTDqW1pY2EfBmcfB2cfCAUXL2FjYWRlbWljYS9kZWZhdWx0LmFzcHgfCWdkFCsAAhYQHwIFClJlZ2xhbWVudG8fAwUKUmVnbGFtZW50bx8EBRgvUmVnbGFtZW50by9EZWZhdWx0LmFzcHgfBQUKUmVnbGFtZW50bx8GZx8HZx8IBRgvcmVnbGFtZW50by9kZWZhdWx0LmFzcHgfCWdkFCsAAhYQHwIFBUF5dWRhHwMFBUF5dWRhHwQFES9BeXVkYS9BeXVkYS5hc3B4HwUFBUF5dWRhHwZnHwdnHwgFES9heXVkYS9heXVkYS5hc3B4HwlnZBQrAAIWEB8CBRVSZWN1cGVyYXIgQ29udHJhc2XDsWEfAwUVUmVjdXBlcmFyIENvbnRyYXNlw7FhHwQFHC9TZW5kRW1haWwvUmVjdXBlcmFQYXNzLmFzcHgfBQUqUmVjdXBlcmFyIGxhIENvbnRyYXNlw7FhIGRlIGFjY2VzbyBhbCBTQUVTHwZnHwdnHwgFHC9zZW5kZW1haWwvcmVjdXBlcmFwYXNzLmFzcHgfCWdkZAIID2QWBgIBDw8WAh8CBdcEPGNlbnRlcj4gICAgPHRhYmxlIHdpZHRoPScxMDAlJz4gICAgICAgIDx0cj4gICAgICAgICAgICA8dGQgcm93c3Bhbj0nMicgYWxpZ249J2NlbnRlcic+ICAgICAgICAgICAgICAgIDxpbWcgc3JjPScuLi8uLi9JbWFnZXMvTG9nb3MvUG9saV9YQ0gucG5nJyBhbHQ9J0lQTicgLz4gICAgICAgICAgICA8L3RkPiAgICAgICAgICAgIDx0ZCBhbGlnbj0nY2VudGVyJz4gICAgICAgICAgICAgICAgPGI+Q0VOVFJPIERFIEVTVFVESU9TIENJRU5Uw41GSUNPUyBZIFRFQ05PTMOTR0lDT1MgTm8uIDk8L2I+ICAgICAgICAgICAgPC90ZD4gICAgICAgICAgICA8dGQgcm93c3Bhbj0nMicgYWxpZ249J2NlbnRlcic+ICAgICAgICAgICAgICAgIDxpbWcgc3JjPScuLi8uLi9JbWFnZXMvTG9nb3MvMDkucG5nJyBhbHQ9J0VzY3VlbGEnIEhlaWdodD0nNjAnIFdpZHRoPSc2MCcgLz4gICAgICAgICAgICA8L3RkPiAgICAgICAgPC90cj4gICAgICAgIDx0cj4gICAgICAgICAgICA8dGQgYWxpZ249J2NlbnRlcic+ICAgICAgICAgICAgICAgIDxiPkpVQU4gREUgRElPUyBCQVRJWjwvYj4gICAgICAgICAgICA8L3RkPiAgICAgICAgPC90cj4gICAgPC90YWJsZT48L2NlbnRlcj5kZAIDDw8WAh8CBc8CICAgIDx0YWJsZT4gICAgICAgIDx0cj4gICAgICAgICAgICA8dGQ+ICAgICAgICAgICAgICAgIDxiPkJPTEVUQTogPC9iPiAgICAgICAgICAgIDwvdGQ+ICAgICAgICAgICAgPHRkPiAgICAgICAgICAgICAgICAyMDI0MDkwODc4ICAgICAgICAgICAgPC90ZD4gICAgICAgIDwvdHI+ICAgICAgICA8dHI+ICAgICAgICAgICAgPHRkPiAgICAgICAgICAgICAgICA8Yj5OT01CUkU6IDwvYj4gICAgICAgICAgICA8L3RkPiAgICAgICAgICAgIDx0ZD4gICAgICAgICAgICAgICAgRU1JTElPIENBTEVQIFZBUkdBUyBZQcORRVogICAgICAgICAgICA8L3RkPiAgICAgICAgPC90cj4gICAgPC90YWJsZT5kZAIFD2QWCAIBDw8WAh8CBRROSVZFTCBNRURJTyBTVVBFUklPUmRkAgMPDxYCHwIFAjIxZGQCBQ8PFgIfAgUENyw3NWRkAgkPDxYCHwIF7C08c3R5bGU+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWJsZS5ib3R0b21Cb3JkZXJ7YmFja2dyb3VuZC1jb2xvcjpXaGl0ZVNtb2tlO2ZvbnQtc2l6ZTp4eC1zbWFsbDt0ZXh0LWFsaWduOmNlbnRlcjtib3JkZXItY29sbGFwc2U6Y29sbGFwc2U7fQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFibGUuYm90dG9tQm9yZGVyIHRkIHtib3JkZXItYm90dG9tOiAxcHggc29saWQgVEVBTDtwYWRkaW5nOjFweDt9DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdHlsZT48Y2VudGVyPjx0YWJsZSB3aWR0aD0iMTAwJSIgY2xhc3M9ImJvdHRvbUJvcmRlciI+PHRyPjx0ZCBjb2xzcGFuPSI2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogTWFyb29uOyBmb250LXNpemU6IHgtc21hbGw7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogV2hpdGU7IHRleHQtYWxpZ246IGNlbnRlciI+UFJJTUVSIFNFTUVTVFJFPC90ZD48L3RyPjx0ciBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogV2hpdGVTbW9rZTsgZm9udC1zaXplOiB4eC1zbWFsbDsgdGV4dC1hbGlnbjogY2VudGVyOyBmb250LXdlaWdodDogYm9sZDsiPjx0ZCBXaWR0aD0iMTBweCI+Q2xhdmU8L3RkPjx0ZCBXaWR0aD0iMTUwcHgiPk1hdGVyaWE8L3RkPjx0ZCBXaWR0aD0iNDBweCI+RmVjaGE8L3RkPjx0ZCBXaWR0aD0iMTBweCI+UGVyaW9kbzwvdGQ+PHRkIFdpZHRoPSIxMHB4Ij5Gb3JtYSBFdmFsLjwvdGQ+PHRkIFdpZHRoPSIxMHB4Ij5DYWxpZmljYWNpb248L3RkPjwvdHI+PHRyPjx0ZD4wMTAxPC90ZD48dGQgYWxpZ249ImxlZnQiPsOBTEdFQlJBPC90ZD48dGQ+SnVsIDE1IDIwMjQ8L3RkPjx0ZD4yNC8yPC90ZD48dGQ+RVRTPC90ZD48dGQ+NjwvdGQ+PC90cj48dHI+PHRkPjAxMDI8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+RklMT1NPRsONQSBJPC90ZD48dGQ+RW5lICA2IDIwMjQ8L3RkPjx0ZD4yNC8xPC90ZD48dGQ+T1JEPC90ZD48dGQ+ODwvdGQ+PC90cj48dHI+PHRkPjAxMDM8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+Q09NUFVUQUNJw5NOIELDgVNJQ0EgSTwvdGQ+PHRkPkVuZSAgNiAyMDI0PC90ZD48dGQ+MjQvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjEwPC90ZD48L3RyPjx0cj48dGQ+MDEwNDwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5JTkdMw4lTIEk8L3RkPjx0ZD5FbmUgIDYgMjAyNDwvdGQ+PHRkPjI0LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD45PC90ZD48L3RyPjx0cj48dGQ+MDEwNTwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5FWFBSRVNJw5NOIE9SQUwgWSBFU0NSSVRBIEk8L3RkPjx0ZD5FbmUgIDYgMjAyNDwvdGQ+PHRkPjI0LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD45PC90ZD48L3RyPjx0cj48dGQ+MDEwNjwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5ERVNBUlJPTExPIERFIEhBQklMSURBREVTIERFTCBQRU5TQU1JRU5UTzwvdGQ+PHRkPkVuZSAgNiAyMDI0PC90ZD48dGQ+MjQvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjc8L3RkPjwvdHI+PHRyPjx0ZD4wMTA3PC90ZD48dGQgYWxpZ249ImxlZnQiPkhJU1RPUklBIERFIE3DiVhJQ08gQ09OVEVNUE9Sw4FORU8gSTwvdGQ+PHRkPkVuZSAgNiAyMDI0PC90ZD48dGQ+MjQvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjg8L3RkPjwvdHI+PHRyPjx0ZD4wMTA4PC90ZD48dGQgYWxpZ249ImxlZnQiPkRFU0FSUk9MTE8gUEVSU09OQUw8L3RkPjx0ZD5FbmUgIDYgMjAyNDwvdGQ+PHRkPjI0LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD44PC90ZD48L3RyPjx0cj48dGQ+MDEwOTwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5PUklFTlRBQ0nDk04gSlVWRU5JTCBZIFBST0ZFU0lPTkFMIEk8L3RkPjx0ZD5FbmUgIDYgMjAyNDwvdGQ+PHRkPjI0LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD45PC90ZD48L3RyPjwvdGFibGU+PGJyIC8+PC9jZW50ZXI+PHN0eWxlPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFibGUuYm90dG9tQm9yZGVye2JhY2tncm91bmQtY29sb3I6V2hpdGVTbW9rZTtmb250LXNpemU6eHgtc21hbGw7dGV4dC1hbGlnbjpjZW50ZXI7Ym9yZGVyLWNvbGxhcHNlOmNvbGxhcHNlO30NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRhYmxlLmJvdHRvbUJvcmRlciB0ZCB7Ym9yZGVyLWJvdHRvbTogMXB4IHNvbGlkIFRFQUw7cGFkZGluZzoxcHg7fQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDwvc3R5bGU+PGNlbnRlcj48dGFibGUgd2lkdGg9IjEwMCUiIGNsYXNzPSJib3R0b21Cb3JkZXIiPjx0cj48dGQgY29sc3Bhbj0iNiIgc3R5bGU9ImJhY2tncm91bmQtY29sb3I6IE1hcm9vbjsgZm9udC1zaXplOiB4LXNtYWxsOyBmb250LXdlaWdodDogYm9sZDsgY29sb3I6IFdoaXRlOyB0ZXh0LWFsaWduOiBjZW50ZXIiPlNFR1VORE8gU0VNRVNUUkU8L3RkPjwvdHI+PHRyIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiBXaGl0ZVNtb2tlOyBmb250LXNpemU6IHh4LXNtYWxsOyB0ZXh0LWFsaWduOiBjZW50ZXI7IGZvbnQtd2VpZ2h0OiBib2xkOyI+PHRkIFdpZHRoPSIxMHB4Ij5DbGF2ZTwvdGQ+PHRkIFdpZHRoPSIxNTBweCI+TWF0ZXJpYTwvdGQ+PHRkIFdpZHRoPSI0MHB4Ij5GZWNoYTwvdGQ+PHRkIFdpZHRoPSIxMHB4Ij5QZXJpb2RvPC90ZD48dGQgV2lkdGg9IjEwcHgiPkZvcm1hIEV2YWwuPC90ZD48dGQgV2lkdGg9IjEwcHgiPkNhbGlmaWNhY2lvbjwvdGQ+PC90cj48dHI+PHRkPjAyMDE8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+R0VPTUVUUsONQSBZIFRSSUdPTk9NRVRSw41BPC90ZD48dGQ+SnVsICA4IDIwMjQ8L3RkPjx0ZD4yNC8yPC90ZD48dGQ+RVhUPC90ZD48dGQ+NjwvdGQ+PC90cj48dHI+PHRkPjAyMDI8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+RklMT1NPRsONQSBJSTwvdGQ+PHRkPkp1bCAgOCAyMDI0PC90ZD48dGQ+MjQvMjwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjg8L3RkPjwvdHI+PHRyPjx0ZD4wMjAzPC90ZD48dGQgYWxpZ249ImxlZnQiPkNPTVBVVEFDScOTTiBCw4FTSUNBIElJPC90ZD48dGQ+SnVsICA4IDIwMjQ8L3RkPjx0ZD4yNC8yPC90ZD48dGQ+T1JEPC90ZD48dGQ+MTA8L3RkPjwvdHI+PHRyPjx0ZD4wMjA0PC90ZD48dGQgYWxpZ249ImxlZnQiPklOR0zDiVMgSUk8L3RkPjx0ZD5KdWwgIDggMjAyNDwvdGQ+PHRkPjI0LzI8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD43PC90ZD48L3RyPjx0cj48dGQ+MDIwNTwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5FWFBSRVNJw5NOIE9SQUwgWSBFU0NSSVRBIElJPC90ZD48dGQ+SnVsICA4IDIwMjQ8L3RkPjx0ZD4yNC8yPC90ZD48dGQ+T1JEPC90ZD48dGQ+ODwvdGQ+PC90cj48dHI+PHRkPjAyMDY8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+QklPTE9Hw41BIELDgVNJQ0E8L3RkPjx0ZD5KdWwgIDggMjAyNDwvdGQ+PHRkPjI0LzI8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD43PC90ZD48L3RyPjx0cj48dGQ+MDIwNzwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5ISVNUT1JJQSBERSBNw4lYSUNPIENPTlRFTVBPUsOBTkVPIElJPC90ZD48dGQ+SnVsICA4IDIwMjQ8L3RkPjx0ZD4yNC8yPC90ZD48dGQ+T1JEPC90ZD48dGQ+ODwvdGQ+PC90cj48dHI+PHRkPjAyMDg8L3RkPjx0ZCBhbGlnbj0ibGVmdCI+T1JJRU5UQUNJw5NOIEpVVkVOSUwgWSBQUk9GRVNJT05BTCBJSTwvdGQ+PHRkPkp1bCAgOCAyMDI0PC90ZD48dGQ+MjQvMjwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjEwPC90ZD48L3RyPjx0cj48dGQ+MDIxMDwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5URUNOSUNBUyBERSBJTlZFU1RJR0FDScOTTiBERSBDQU1QTzwvdGQ+PHRkPkp1bCAgOCAyMDI0PC90ZD48dGQ+MjQvMjwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjc8L3RkPjwvdHI+PC90YWJsZT48YnIgLz48L2NlbnRlcj48c3R5bGU+DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0YWJsZS5ib3R0b21Cb3JkZXJ7YmFja2dyb3VuZC1jb2xvcjpXaGl0ZVNtb2tlO2ZvbnQtc2l6ZTp4eC1zbWFsbDt0ZXh0LWFsaWduOmNlbnRlcjtib3JkZXItY29sbGFwc2U6Y29sbGFwc2U7fQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdGFibGUuYm90dG9tQm9yZGVyIHRkIHtib3JkZXItYm90dG9tOiAxcHggc29saWQgVEVBTDtwYWRkaW5nOjFweDt9DQogICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9zdHlsZT48Y2VudGVyPjx0YWJsZSB3aWR0aD0iMTAwJSIgY2xhc3M9ImJvdHRvbUJvcmRlciI+PHRyPjx0ZCBjb2xzcGFuPSI2IiBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogTWFyb29uOyBmb250LXNpemU6IHgtc21hbGw7IGZvbnQtd2VpZ2h0OiBib2xkOyBjb2xvcjogV2hpdGU7IHRleHQtYWxpZ246IGNlbnRlciI+VEVSQ0VSIFNFTUVTVFJFPC90ZD48L3RyPjx0ciBzdHlsZT0iYmFja2dyb3VuZC1jb2xvcjogV2hpdGVTbW9rZTsgZm9udC1zaXplOiB4eC1zbWFsbDsgdGV4dC1hbGlnbjogY2VudGVyOyBmb250LXdlaWdodDogYm9sZDsiPjx0ZCBXaWR0aD0iMTBweCI+Q2xhdmU8L3RkPjx0ZCBXaWR0aD0iMTUwcHgiPk1hdGVyaWE8L3RkPjx0ZCBXaWR0aD0iNDBweCI+RmVjaGE8L3RkPjx0ZCBXaWR0aD0iMTBweCI+UGVyaW9kbzwvdGQ+PHRkIFdpZHRoPSIxMHB4Ij5Gb3JtYSBFdmFsLjwvdGQ+PHRkIFdpZHRoPSIxMHB4Ij5DYWxpZmljYWNpb248L3RkPjwvdHI+PHRyPjx0ZD5DMzAxPC90ZD48dGQgYWxpZ249ImxlZnQiPkdFT01FVFLDjUEgQU5BTMONVElDQTwvdGQ+PHRkPkVuZSAyOCAyMDI1PC90ZD48dGQ+MjUvMTwvdGQ+PHRkPkVUUzwvdGQ+PHRkPjY8L3RkPjwvdHI+PHRyPjx0ZD5DMzAyPC90ZD48dGQgYWxpZ249ImxlZnQiPkbDjVNJQ0EgSTwvdGQ+PHRkPkVuZSAyMSAyMDI1PC90ZD48dGQ+MjUvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjU8L3RkPjwvdHI+PHRyPjx0ZD5DMzAzPC90ZD48dGQgYWxpZ249ImxlZnQiPlFVw41NSUNBIEk8L3RkPjx0ZD5FbmUgMjEgMjAyNTwvdGQ+PHRkPjI1LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD43PC90ZD48L3RyPjx0cj48dGQ+QzMwNDwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5JTkdMw4lTIElJSTwvdGQ+PHRkPkVuZSAyMSAyMDI1PC90ZD48dGQ+MjUvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjc8L3RkPjwvdHI+PHRyPjx0ZD5DMzA1PC90ZD48dGQgYWxpZ249ImxlZnQiPkNPTVVOSUNBQ0nDk04gQ0lFTlTDjUZJQ0E8L3RkPjx0ZD5FbmUgMjEgMjAyNTwvdGQ+PHRkPjI1LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD44PC90ZD48L3RyPjx0cj48dGQ+QzMwNjwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5ESUJVSk8gVMOJQ05JQ08gSTwvdGQ+PHRkPkVuZSAyMSAyMDI1PC90ZD48dGQ+MjUvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjc8L3RkPjwvdHI+PHRyPjx0ZD5DMzA3PC90ZD48dGQgYWxpZ249ImxlZnQiPkVOVE9STk8gU09DSU9FQ09Ow5NNSUNPIERFIE3DiVhJQ088L3RkPjx0ZD5FbmUgMjEgMjAyNTwvdGQ+PHRkPjI1LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD45PC90ZD48L3RyPjx0cj48dGQ+QzMwODwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5NRVRST0xPR8ONQSBZIFRFQ05PTE9Hw41BIERFIE1BVEVSSUFMRVM8L3RkPjx0ZD5FbmUgMjEgMjAyNTwvdGQ+PHRkPjI1LzE8L3RkPjx0ZD5PUkQ8L3RkPjx0ZD43PC90ZD48L3RyPjx0cj48dGQ+QzMwOTwvdGQ+PHRkIGFsaWduPSJsZWZ0Ij5FTEVDVFJPVMOJQ05JQSBERSBDT1JSSUVOVEUgQ09OVElOVUEgWSBDT1JSSUVOVEUgQUxURVJOQTwvdGQ+PHRkPkVuZSAyMSAyMDI1PC90ZD48dGQ+MjUvMTwvdGQ+PHRkPk9SRDwvdGQ+PHRkPjY8L3RkPjwvdHI+PHRyPjx0ZD5DMzEwPC90ZD48dGQgYWxpZ249ImxlZnQiPlBST0NFU09TIERFIFNPTERBRFVSQSBFTiBTSVNURU1BUyBNRUNBVFLDk05JQ09TPC90ZD48dGQ+RW5lIDIxIDIwMjU8L3RkPjx0ZD4yNS8xPC90ZD48dGQ+T1JEPC90ZD48dGQ+MTA8L3RkPjwvdHI+PC90YWJsZT48YnIgLz48L2NlbnRlcj5kZAIJDzwrAA0CAA8WAh8BZ2QMFCsAEQVFMDowLDA6MSwwOjIsMDozLDA6NCwwOjUsMDo2LDA6NywwOjgsMDo5LDA6MTAsMDoxMSwwOjEyLDA6MTMsMDoxNCwwOjE1FCsAAhYQHwIFEERhdG9zIFBlcnNvbmFsZXMfAwUQRGF0b3MgUGVyc29uYWxlcx8EBSIvQWx1bW5vcy9pbmZvX2FsdW1ub3MvZGVmYXVsdC5hc3B4HwUFD0RhdG9zIEdlbmVyYWxlcx8GZx8HZx8IBSIvYWx1bW5vcy9pbmZvX2FsdW1ub3MvZGVmYXVsdC5hc3B4HwlnFCsABAULMDowLDA6MSwwOjIUKwACFhAfAgUQRGF0b3MgUGVyc29uYWxlcx8DBRBEYXRvcyBQZXJzb25hbGVzHwQFJy9BbHVtbm9zL2luZm9fYWx1bW5vcy9EYXRvc19BbHVtbm8uYXNweB8FBRVJbmZvcm1hY2nDs24gUGVyc29uYWwfBmcfB2cfCAUnL2FsdW1ub3MvaW5mb19hbHVtbm9zL2RhdG9zX2FsdW1uby5hc3B4HwlnZBQrAAIWEB8CBQ5EYXRvcyBNw6lkaWNvcx8DBQ5EYXRvcyBNw6lkaWNvcx8EBS4vQWx1bW5vcy9pbmZvX2FsdW1ub3MvRGF0b3NBbHVtbm9zTWVkaWNvcy5hc3B4HwUFFUluZm9ybWFjacOzbiBQZXJzb25hbB8GZx8HZx8IBS4vYWx1bW5vcy9pbmZvX2FsdW1ub3MvZGF0b3NhbHVtbm9zbWVkaWNvcy5hc3B4HwlnZBQrAAIWEB8CBRdEYXRvcyBFeHRyYWN1cnJpY3VsYXJlcx8DBRdEYXRvcyBFeHRyYWN1cnJpY3VsYXJlcx8EBTIvQWx1bW5vcy9pbmZvX2FsdW1ub3MvRGF0b3NfRXh0cmFjdXJyaWN1bGFyZXMuYXNweB8FBRdEYXRvcyBFeHRyYWN1cnJpY3VsYXJlcx8GZx8HZx8IBTIvYWx1bW5vcy9pbmZvX2FsdW1ub3MvZGF0b3NfZXh0cmFjdXJyaWN1bGFyZXMuYXNweB8JZ2QUKwACFhAfAgUMUGFzZSBEaWdpdGFsHwMFDFBhc2UgRGlnaXRhbB8EBScvQWx1bW5vcy9QYXNlX0RpZ2l0YWwvUGFzZV9EaWdpdGFsLmFzcHgfBQUMUGFzZSBEaWdpdGFsHwZnHwdnHwgFJy9hbHVtbm9zL3Bhc2VfZGlnaXRhbC9wYXNlX2RpZ2l0YWwuYXNweB8JZ2QUKwACFhAfAgUORXhwZWRpZW50ZSBEQUUfAwUORXhwZWRpZW50ZSBEQUUfBAUpL0FsdW1ub3MvaW5mb19hbHVtbm9zL0V4cGVkaWVudGVfREFFLmFzcHgfBQUdRG9jdW1lbnRvcyBkZWwgRXhwZWRpZW50ZSBEQUUfBmcfB2cfCAUpL2FsdW1ub3MvaW5mb19hbHVtbm9zL2V4cGVkaWVudGVfZGFlLmFzcHgfCWdkFCsAAhYQHwIFEkNhbWJpb3MgZGUgQ2FycmVyYR8DBRJDYW1iaW9zIGRlIENhcnJlcmEfBAUgL0FsdW1ub3MvQ2FtYmlvc0Nhci9EZWZhdWx0LmFzcHgfBQUsQWNjZXNvIGEgbGEgUGxhdGFmb3JtYSBkZSBDYW1iaW9zIGRlIENhcnJlcmEfBmcfB2cfCAUgL2FsdW1ub3MvY2FtYmlvc2Nhci9kZWZhdWx0LmFzcHgfCWdkFCsAAhYQHwIFFFJlZCBBY2Fkw6ltaWNhIElTSVNBHwMFFFJlZCBBY2Fkw6ltaWNhIElTSVNBHwQFGy9BbHVtbm9zL0lTSVNBL0RlZmF1bHQuYXNweB8FBTFBY2Nlc28gYSBsYSBQbGF0YWZvcm1hIGRlIGxhIFJlZCBBY2Fkw6ltaWNhIElTSVNBHwZnHwdnHwgFGy9hbHVtbm9zL2lzaXNhL2RlZmF1bHQuYXNweB8JZ2QUKwACFhAfAgUIVHJhbWl0ZXMfAwUIVHJhbWl0ZXMfBAUeL0FsdW1ub3MvVHJhbWl0ZXMvRGVmYXVsdC5hc3B4HwUFOlDDoWdpbmEgcGFyYSBzb2xpY2l0YXIgdHJhbWl0ZXMgcHJvYmF0b3Jpb3MgZGUgZXNjb2xhcmlkYWQfBmcfB2cfCAUeL2FsdW1ub3MvdHJhbWl0ZXMvZGVmYXVsdC5hc3B4HwlnFCsABAULMDowLDA6MSwwOjIUKwACFhAfAgUJU29saWNpdHVkHwMFCVNvbGljaXR1ZB8EBS8vQWx1bW5vcy9UcmFtaXRlcy9Tb2xpY2l0dWRfVHJhbWl0ZV9BbHVtbm8uYXNweB8FBTpQw6FnaW5hIHBhcmEgc29saWNpdGFyIHRyYW1pdGVzIHByb2JhdG9yaW9zIGRlIGVzY29sYXJpZGFkHwZnHwdnHwgFLy9hbHVtbm9zL3RyYW1pdGVzL3NvbGljaXR1ZF90cmFtaXRlX2FsdW1uby5hc3B4HwlnZBQrAAIWEB8CBQtTZWd1aW1pZW50bx8DBQtTZWd1aW1pZW50bx8EBTEvQWx1bW5vcy9UcmFtaXRlcy9TZWd1aW1pZW50b19UcmFtaXRlX0FsdW1uby5hc3B4HwUFRlDDoWdpbmEgcGFyYSBkYXIgc2VndWltaWVudG8gYSB0dXMgdHJhbWl0ZXMgcHJvYmF0b3Jpb3MgZGUgZXNjb2xhcmlkYWQfBmcfB2cfCAUxL2FsdW1ub3MvdHJhbWl0ZXMvc2VndWltaWVudG9fdHJhbWl0ZV9hbHVtbm8uYXNweB8JZ2QUKwACFhAfAgUFQ2l0YXMfAwUFQ2l0YXMfBAUbL0FsdW1ub3MvQ2l0YXMvRGVmYXVsdC5hc3B4HwUFKFDDoWdpbmEgcGFyYSBkYXIgc2VndWltaWVudG8gYSB0dXMgY2l0YXMfBmcfB2cfCAUbL2FsdW1ub3MvY2l0YXMvZGVmYXVsdC5hc3B4HwlnZBQrAAIWEB8CBRFEYXRvcyBhY2Fkw6ltaWNvcx8DBRFEYXRvcyBhY2Fkw6ltaWNvcx8EBRwvQWx1bW5vcy9ib2xldGEvZGVmYXVsdC5hc3B4HwUFIk11ZXN0cmEgdHUgaW5mb3JtYWNpw7NuIGFjYWTDqW1pY2EfBmcfB2cfCAUcL2FsdW1ub3MvYm9sZXRhL2RlZmF1bHQuYXNweB8JZxQrAAUFDzA6MCwwOjEsMDoyLDA6MxQrAAIWEh8DBQdLw6FyZGV4HwlnHwpnHwIFB0vDoXJkZXgfBAUbL0FsdW1ub3MvYm9sZXRhL2thcmRleC5hc3B4HwZnHwdnHwUFFEhpc3RvcmlhbCBBY2Fkw6ltaWNvHwgFGy9hbHVtbm9zL2JvbGV0YS9rYXJkZXguYXNweGQUKwACFhAfAgUORXN0YWRvIEdlbmVyYWwfAwUORXN0YWRvIEdlbmVyYWwfBAUiL0FsdW1ub3MvYm9sZXRhL0VzdGFkb19BbHVtbm8uYXNweB8FBRdJbmRpY2Fkb3JlcyBhY2Fkw6ltaWNvcx8GZx8HZx8IBSIvYWx1bW5vcy9ib2xldGEvZXN0YWRvX2FsdW1uby5hc3B4HwlnZBQrAAIWEB8CBRJTb2xpY2l0dWQgRGljdGFtZW4fAwUSU29saWNpdHVkIERpY3RhbWVuHwQFIi9BbHVtbm9zL0RpY3RhbWVuZXMvQ2FuZGlkYXRvLmFzcHgfBQUPRGF0b3MgZ2VuZXJhbGVzHwZnHwdnHwgFIi9hbHVtbm9zL2RpY3RhbWVuZXMvY2FuZGlkYXRvLmFzcHgfCWdkFCsAAhYQHwIFCERpY3RhbWVuHwMFCERpY3RhbWVuHwQFKy9BbHVtbm9zL0RpY3RhbWVuZXMvcmVzcHVlc3RhX2RpY3RhbWVuLmFzcHgfBQUVSW5mb3JtYWNpw7NuIFBlcnNvbmFsHwZnHwdnHwgFKy9hbHVtbm9zL2RpY3RhbWVuZXMvcmVzcHVlc3RhX2RpY3RhbWVuLmFzcHgfCWdkFCsAAhYQHwIFE0luc2NyaXBjacOzbiBBY3R1YWwfAwUTSW5zY3JpcGNpw7NuIEFjdHVhbB8EBSsvQWx1bW5vcy9JbmZvcm1hY2lvbl9zZW1lc3RyYWwvZGVmYXVsdC5hc3B4HwUFKEluZm9ybWFjaW9uIGRlbCBwZXJpb2RvIGVzY29sYXIgZW4gY3Vyc28fBmcfB2cfCAUrL2FsdW1ub3MvaW5mb3JtYWNpb25fc2VtZXN0cmFsL2RlZmF1bHQuYXNweB8JZxQrAAMFBzA6MCwwOjEUKwACFhAfAgUHSG9yYXJpbx8DBQdIb3JhcmlvHwQFMi9BbHVtbm9zL0luZm9ybWFjaW9uX3NlbWVzdHJhbC9Ib3JhcmlvX0FsdW1uby5hc3B4HwUFEUhvcmFyaW8gZGUgQ2xhc2VzHwZnHwdnHwgFMi9hbHVtbm9zL2luZm9ybWFjaW9uX3NlbWVzdHJhbC9ob3JhcmlvX2FsdW1uby5hc3B4HwlnZBQrAAIWEB8CBQ5DYWxpZmljYWNpb25lcx8DBQ5DYWxpZmljYWNpb25lcx8EBTYvQWx1bW5vcy9JbmZvcm1hY2lvbl9zZW1lc3RyYWwvY2FsaWZpY2FjaW9uZXNfc2VtLmFzcHgfBQUlQ2FsaWZpY2FjaW9uZXMgZGUgbG9zIGRlcGFydGFtZW50YWxlcx8GZx8HZx8IBTYvYWx1bW5vcy9pbmZvcm1hY2lvbl9zZW1lc3RyYWwvY2FsaWZpY2FjaW9uZXNfc2VtLmFzcHgfCWdkFCsAAhYQHwIFD1JlaW5zY3JpcGNpb25lcx8DBQ9SZWluc2NyaXBjaW9uZXMfBAUlL0FsdW1ub3MvUmVpbnNjcmlwY2lvbmVzL2RlZmF1bHQuYXNweB8FBQ9SZWluc2NyaXBjaW9uZXMfBmcfB2cfCAUlL2FsdW1ub3MvcmVpbnNjcmlwY2lvbmVzL2RlZmF1bHQuYXNweB8JZxQrAAQFCzA6MCwwOjEsMDoyFCsAAhYQHwIFFUNpdGEgZGUgUmVpbnNjcmlwY2lvbh8DBRVDaXRhIGRlIFJlaW5zY3JpcGNpb24fBAUyL0FsdW1ub3MvUmVpbnNjcmlwY2lvbmVzL2ZpY2hhc19yZWluc2NyaXBjaW9uLmFzcHgfBQUVQ2l0YSBkZSBSZWluc2NyaXBjaW9uHwZnHwdnHwgFMi9hbHVtbm9zL3JlaW5zY3JpcGNpb25lcy9maWNoYXNfcmVpbnNjcmlwY2lvbi5hc3B4HwlnZBQrAAIWEB8CBQ1SZWluc2NyaXBjaW9uHwMFDVJlaW5zY3JpcGNpb24fBAUpL0FsdW1ub3MvUmVpbnNjcmlwY2lvbmVzL3JlaW5zY3JpYmlyLmFzcHgfBQUNUmVpbnNjcmlwY2lvbh8GZx8HZx8IBSkvYWx1bW5vcy9yZWluc2NyaXBjaW9uZXMvcmVpbnNjcmliaXIuYXNweB8JZ2QUKwACFhAfAgULQ29tcHJvYmFudGUfAwULQ29tcHJvYmFudGUfBAUsL0FsdW1ub3MvUmVpbnNjcmlwY2lvbmVzL0hvcmFyaW9fQWx1bW5vLmFzcHgfBQULQ29tcHJvYmFudGUfBmcfB2cfCAUsL2FsdW1ub3MvcmVpbnNjcmlwY2lvbmVzL2hvcmFyaW9fYWx1bW5vLmFzcHgfCWdkFCsAAhYQHwIFA0VUUx8DBQNFVFMfBAUZL0FsdW1ub3MvRVRTL2RlZmF1bHQuYXNweB8FBQVFLlQuUx8GZx8HZx8IBRkvYWx1bW5vcy9ldHMvZGVmYXVsdC5hc3B4HwlnFCsAAwUHMDowLDA6MRQrAAIWEB8CBQ1JbnNjcmliaXIgRVRTHwMFDUluc2NyaWJpciBFVFMfBAUhL0FsdW1ub3MvRVRTL2luc2NyaXBjaW9uX2V0cy5hc3B4HwUFDUluc2NyaWJpciBFVFMfBmcfB2cfCAUhL2FsdW1ub3MvZXRzL2luc2NyaXBjaW9uX2V0cy5hc3B4HwlnZBQrAAIWEB8CBQ5DYWxpZmljYWNpb25lcx8DBQ5DYWxpZmljYWNpb25lcx8EBSQvQWx1bW5vcy9FVFMvY2FsaWZpY2FjaW9uZXNfZXRzLmFzcHgfBQUQQ2FsaWZpY2FjaW9uIEVUUx8GZx8HZx8IBSQvYWx1bW5vcy9ldHMvY2FsaWZpY2FjaW9uZXNfZXRzLmFzcHgfCWdkFCsAAhYQHwIFHlNhYmVyZXMgUHJldmlhbWVudGUgQWRxdWlyaWRvcx8DBR5TYWJlcmVzIFByZXZpYW1lbnRlIEFkcXVpcmlkb3MfBAUdL0FsdW1ub3MvU2FiZXJlcy9ERUZBVUxULkFTUFgfBQUeU2FiZXJlcyBQcmV2aWFtZW50ZSBBZHF1aXJpZG9zHwZnHwdnHwgFHS9hbHVtbm9zL3NhYmVyZXMvZGVmYXVsdC5hc3B4HwlnFCsAAwUHMDowLDA6MRQrAAIWEB8CBShJbnNjcmliaXIgU2FiZXJlcyBQcmV2aWFtZW50ZSBBZHF1aXJpZG9zHwMFKEluc2NyaWJpciBTYWJlcmVzIFByZXZpYW1lbnRlIEFkcXVpcmlkb3MfBAUpL0FsdW1ub3MvU2FiZXJlcy9JbnNjcmlwY2lvbl9TYWJlcmVzLmFzcHgfBQUoSW5zY3JpYmlyIFNhYmVyZXMgUHJldmlhbWVudGUgQWRxdWlyaWRvcx8GZx8HZx8IBSkvYWx1bW5vcy9zYWJlcmVzL2luc2NyaXBjaW9uX3NhYmVyZXMuYXNweB8JZ2QUKwACFhAfAgUOQ2FsaWZpY2FjaW9uZXMfAwUOQ2FsaWZpY2FjaW9uZXMfBAUsL0FsdW1ub3MvU2FiZXJlcy9jYWxpZmljYWNpb25lc19zYWJlcmVzLmFzcHgfBQUtQ2FsaWZpY2FjaW9uZXMgU2FiZXJlcyBQcmV2aWFtZW50ZSBBZHF1aXJpZG9zHwZnHwdnHwgFLC9hbHVtbm9zL3NhYmVyZXMvY2FsaWZpY2FjaW9uZXNfc2FiZXJlcy5hc3B4HwlnZBQrAAIWEB8CBRZDdXJzb3MgZGUgUmVjdXBlcmFjaW9uHwMFFkN1cnNvcyBkZSBSZWN1cGVyYWNpb24fBAUiL0FsdW1ub3MvUmVjdXBlcmFjaW9uL0RlZmF1bHQuYXNweB8FBRZDdXJzb3MgZGUgUmVjdXBlcmFjaW9uHwZnHwdnHwgFIi9hbHVtbm9zL3JlY3VwZXJhY2lvbi9kZWZhdWx0LmFzcHgfCWcUKwADBQcwOjAsMDoxFCsAAhYQHwIFIEluc2NyaWJpciBDdXJzb3MgZGUgUmVjdXBlcmFjaW9uHwMFIEluc2NyaWJpciBDdXJzb3MgZGUgUmVjdXBlcmFjaW9uHwQFMy9BbHVtbm9zL1JlY3VwZXJhY2lvbi9JbnNjcmlwY2lvbl9SZWN1cGVyYWNpb24uYXNweB8FBSBJbnNjcmliaXIgQ3Vyc29zIGRlIFJlY3VwZXJhY2lvbh8GZx8HZx8IBTMvYWx1bW5vcy9yZWN1cGVyYWNpb24vaW5zY3JpcGNpb25fcmVjdXBlcmFjaW9uLmFzcHgfCWdkFCsAAhYQHwIFDkNhbGlmaWNhY2lvbmVzHwMFDkNhbGlmaWNhY2lvbmVzHwQFNi9BbHVtbm9zL1JlY3VwZXJhY2lvbi9jYWxpZmljYWNpb25lc19yZWN1cGVyYWNpb24uYXNweB8FBSVDYWxpZmljYWNpb25lcyBDdXJzb3MgZGUgUmVjdXBlcmFjaW9uHwZnHwdnHwgFNi9hbHVtbm9zL3JlY3VwZXJhY2lvbi9jYWxpZmljYWNpb25lc19yZWN1cGVyYWNpb24uYXNweB8JZ2QUKwACFhAfAgUHVHV0b3Jlcx8DBQdUdXRvcmVzHwQFHS9BbHVtbm9zL1R1dG9yZXMvRGVmYXVsdC5hc3B4HwUFEERhdG9zIGRlIFR1dG9yaWEfBmcfB2cfCAUdL2FsdW1ub3MvdHV0b3Jlcy9kZWZhdWx0LmFzcHgfCWcUKwAEBQswOjAsMDoxLDA6MhQrAAIWEB8CBQxUdXRvciBBY3R1YWwfAwUMVHV0b3IgQWN0dWFsHwQFIS9BbHVtbm9zL3R1dG9yZXMvRGF0b3NfVHV0b3IuYXNweB8FBR9EYXRvcyBkZWwgUHJvZmVzb3IgVHV0b3IgQWN0dWFsHwZnHwdnHwgFIS9hbHVtbm9zL3R1dG9yZXMvZGF0b3NfdHV0b3IuYXNweB8JZ2QUKwACFhAfAgULQ29tZW50YXJpb3MfAwULQ29tZW50YXJpb3MfBAUhL0FsdW1ub3MvdHV0b3Jlcy9jb21lbnRhcmlvcy5hc3B4HwUFLkNvbWVudGFyaW9zIHJlYWxpemFkb3MgcG9yIGVsIHR1dG9yIGRlbCBhbHVtbm8fBmcfB2cfCAUhL2FsdW1ub3MvdHV0b3Jlcy9jb21lbnRhcmlvcy5hc3B4HwlnZBQrAAIWEB8CBQtFdmFsdWFjacOzbh8DBQtFdmFsdWFjacOzbh8EBSgvQWx1bW5vcy90dXRvcmVzL0V2YWx1YWNpb25fVHV0b3Jlcy5hc3B4HwUFHUV2YWx1YWNpw7NuIGFsIHByb2Zlc29yIHR1dG9yHwZnHwdnHwgFKC9hbHVtbm9zL3R1dG9yZXMvZXZhbHVhY2lvbl90dXRvcmVzLmFzcHgfCWdkFCsAAhYQHwIFE0V2YWx1YWNpb24gUHJvZmVzb3IfAwUTRXZhbHVhY2lvbiBQcm9mZXNvch8EBSgvQWx1bW5vcy9FdmFsdWFjaW9uX0RvY2VudGUvRGVmYXVsdC5hc3B4HwUFE0RhdG9zIGRlIEV2YWx1YWNpb24fBmcfB2cfCAUoL2FsdW1ub3MvZXZhbHVhY2lvbl9kb2NlbnRlL2RlZmF1bHQuYXNweB8JZxQrAAIFAzA6MBQrAAIWEB8CBQtFdmFsdWFjacOzbh8DBQtFdmFsdWFjacOzbh8EBS8vQWx1bW5vcy9FdmFsdWFjaW9uX2RvY2VudGUvY2FsaWZpY2FfcHJvZmUuYXNweB8FBRVFdmFsdWFjaW9uIFByb2Zlc29yZXMfBmcfB2cfCAUvL2FsdW1ub3MvZXZhbHVhY2lvbl9kb2NlbnRlL2NhbGlmaWNhX3Byb2ZlLmFzcHgfCWdkFCsAAhYQHwIFD0NvcnJlbyBwZXJzb25hbB8DBQ9Db3JyZW8gcGVyc29uYWwfBAUiL0FsdW1ub3MvQ2FtYmlvQ29ycmVvUGVyc29uYWwuYXNweB8FBRlDYW1iaW8gZGUgY29ycmVvIHBlcnNvbmFsHwZnHwdnHwgFIi9hbHVtbm9zL2NhbWJpb2NvcnJlb3BlcnNvbmFsLmFzcHgfCWdkFCsAAhYQHwIFD0NsYXZlIGRlIGFjY2Vzbx8DBQ9DbGF2ZSBkZSBhY2Nlc28fBAUaL0FsdW1ub3MvY2FtYmlhX2NsYXZlLmFzcHgfBQUfQ2FtYmlvIGRlIENvbnRyYXNlw7FhIGRlIGFjY2Vzbx8GZx8HZx8IBRovYWx1bW5vcy9jYW1iaWFfY2xhdmUuYXNweB8JZ2RkAgoPZBYCAgMPFgIeB1Zpc2libGVoZBgDBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WAgUpY3RsMDAkbGVmdENvbHVtbiRMb2dpblN0YXR1c1Nlc3Npb24kY3RsMDEFKWN0bDAwJGxlZnRDb2x1bW4kTG9naW5TdGF0dXNTZXNzaW9uJGN0bDAzBQ1jdGwwMCRzdWJNZW51Dw9kBRlEYXRvcyBhY2Fkw6ltaWNvc1xLw6FyZGV4ZAUOY3RsMDAkbWFpbm1lbnUPD2QFDkluaWNpb1xBbHVtbm9zZMQ1sm/TKReZeiDSTT6IwYSo0Zgn" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=oqIXJMUcEbYpe6uqIWXRF6a45gkbPAdiu_cp1nk9QHO-uWCtqjmGwU-Z4jWwbexEYftNCOVnqV54peMqkJd7374LWUc1&amp;t=638250420092864286" type="text/javascript"></script>
+
+
+<script src="/WebResource.axd?d=xy13-F8VNSwYXPHB-wPldo9-3GXAZt9oCVUMBTvh-NtIXIqm_TIG_a-iDiBemODQxSD4-l5ttiBW2dePRAkZKh2FSO01&amp;t=638250420092864286" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9D949691" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWAgLkooSYDwLui87GCMf9HOgRht7ufGY6v6uB1nn6ORpZ" />
+</div>
+		<div id="wrapper">
+			<div id="header">
+			
+				<div id="logo">
+					<a id="ctl00_lnkHome" title="Página principal" href="../../Default.aspx" style="display:inline-block;height:75%;width:75%;"><img title="Página principal" src="Imagenes/Poli_XCH.png" alt="[Home]" style="border-width:0px;" /></a>
+				</div>
+				<div id="banner" style="font-weight: bold; font-size: small; color: maroon; font-family: Tahoma; font-variant: small-caps; right: 139px; top: 3px; text-align: center; width: 720px;">
+					
+					<br />
+					CENTRO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS No. 9			
+                    <br />
+                    JUAN DE DIOS BATIZ
+				</div>
+				<div id="search">
+                   <table>
+                   <tr>
+                       <td rowspan="2">
+                       <img id="ctl00_LogoEscuela" src="Imagenes/09.png" alt="Escuela" style="height:60px;width:60px;border-width:0px;" />
+                       </td>
+                   <td>
+                        <a id="ctl00_Correo" href="../../#"><img src="Imagenes/email.png" alt="Email" style="border-width:0px;" /></a>&nbsp;
+                    </td>
+                   </tr>
+                   <tr>
+                   <td>
+                        <a id="ctl00_Mapa" href="../../Mapa.aspx"><img src="Imagenes/mapa.png" alt="Mapa" style="border-width:0px;" /></a>&nbsp;</td>
+                   </tr>
+                   </table>
+                    </div>
+			</div>
+			<div id="mainnav">
+				
+				<a href="#ctl00_mainmenu_SkipLink"><img alt="" src="/WebResource.axd?d=yrAMJi9et092wmlfw136WdzPmpRAHn2MIMcTuezHJTZLYnvS7cczRFSZ9BUV3g51EcGabu43w2liQ14gA8lQ2E8u8Ok1&amp;t=638250420092864286" width="0" height="0" style="border-width:0px;" /></a><table id="ctl00_mainmenu" class="ctl00_mainmenu_5 ctl00_mainmenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr>
+		<td onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Inicio" id="ctl00_mainmenun0"><table class="item ctl00_mainmenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3" href="/default.aspx" style="border-style:none;font-size:1em;">Inicio</a></td>
+			</tr>
+		</table></td><td style="width:0px;"></td><td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_mainmenu_5">
+			<tr>
+				<td style="width:0px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Alumnos" id="ctl00_mainmenun1"><table class="item ctl00_mainmenu_4 selected ctl00_mainmenu_7" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3 selected ctl00_mainmenu_6" href="/Alumnos/default.aspx" style="border-style:none;font-size:1em;">Alumnos</a></td>
+					</tr>
+				</table></td><td style="width:0px;"></td><td style="width:0px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Académica" id="ctl00_mainmenun2"><table class="item ctl00_mainmenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3" href="/Academica/default.aspx" style="border-style:none;font-size:1em;">Académica</a></td>
+					</tr>
+				</table></td><td style="width:0px;"></td><td style="width:0px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Reglamento" id="ctl00_mainmenun3"><table class="item ctl00_mainmenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3" href="/Reglamento/Default.aspx" style="border-style:none;font-size:1em;">Reglamento</a></td>
+					</tr>
+				</table></td><td style="width:0px;"></td><td style="width:0px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Ayuda" id="ctl00_mainmenun4"><table class="item ctl00_mainmenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3" href="/Ayuda/Ayuda.aspx" style="border-style:none;font-size:1em;">Ayuda</a></td>
+					</tr>
+				</table></td><td style="width:0px;"></td><td style="width:0px;"></td><td onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Recuperar la Contraseña de acceso al SAES" id="ctl00_mainmenun5"><table class="item ctl00_mainmenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;"><a class="ctl00_mainmenu_1 item ctl00_mainmenu_3" href="/SendEmail/RecuperaPass.aspx" style="border-style:none;font-size:1em;">Recuperar Contraseña</a></td>
+					</tr>
+				</table></td><td style="width:0px;"></td>
+			</tr>
+		</table></td>
+	</tr>
+</table><a id="ctl00_mainmenu_SkipLink"></a>			
+			</div>
+															
+			<div id="contentwrapper">
+				<div id="floatwrapper">
+					<div id="centercolumn">
+						<div id="breadcrumbs">
+							<span id="ctl00_smPath"><a href="#ctl00_smPath_SkipLink"><img alt="" height="0" width="0" src="/WebResource.axd?d=yrAMJi9et092wmlfw136WdzPmpRAHn2MIMcTuezHJTZLYnvS7cczRFSZ9BUV3g51EcGabu43w2liQ14gA8lQ2E8u8Ok1&amp;t=638250420092864286" style="border-width:0px;" /></a><span><a title="Inicio" href="/default.aspx">Inicio</a></span><span>&#160;&#187;&#160;</span><span><a title="Alumnos" href="/Alumnos/default.aspx">Alumnos</a></span><span>&#160;&#187;&#160;</span><span><a title="Muestra tu información académica" href="/Alumnos/boleta/default.aspx">Datos acad&#233;micos</a></span><span>&#160;&#187;&#160;</span><span>K&#225;rdex</span><a id="ctl00_smPath_SkipLink"></a></span>
+						</div>
+						<div id="copy">
+							
+
+<!--
+	Desarrollador:		    Ing. Ramon Alejandro Quiroz Quiroz
+	Fecha:			        10 Diciembre 2008
+	Ultima Modificación:	11 Diciembre 2008
+	Descripcion:		    Pagina que visualiza la situcaion academica del alumno materias reprobadas, adeudadas y  desfasadas
+-->
+    <div class="container">        
+        <span id="ctl00_mainCopy_Lbl_Generales"><center>    <table width='100%'>        <tr>            <td rowspan='2' align='center'>                <img src='Imagenes/Poli_XCH.png' alt='IPN' />            </td>            <td align='center'>                <b>CENTRO DE ESTUDIOS CIENTÍFICOS Y TECNOLÓGICOS No. 9</b>            </td>            <td rowspan='2' align='center'>                <img src='Imagenes/09.png' alt='Escuela' Height='60' Width='60' />            </td>        </tr>        <tr>            <td align='center'>                <b>JUAN DE DIOS BATIZ</b>            </td>        </tr>    </table></center></span>
+        <span id="ctl00_mainCopy_Lbl_Nombre">    <table>        <tr>            <td>                <b>BOLETA: </b>            </td>            <td>                2024090878            </td>        </tr>        <tr>            <td>                <b>NOMBRE: </b>            </td>            <td>                EMILIO CALEP VARGAS YAÑEZ            </td>        </tr>    </table></span>
+        <hr style="border:2px solid #6C1D45;border-radius:5px;" />
+        <div id="ctl00_mainCopy_Panel1" style="height:600px;overflow-y:scroll;">
+	
+            <table width="95%">
+                <tr>
+                    <td>
+                        <b>Carrera: </b><span id="ctl00_mainCopy_Lbl_Carrera">NIVEL MEDIO SUPERIOR</span>
+                    </td>
+                    <td>
+                        <b>Plan: </b><span id="ctl00_mainCopy_Lbl_Plan">21</span>
+                    </td>
+                    <td>
+                        <b>Promedio: </b><span id="ctl00_mainCopy_Lbl_Promedio">8,14</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <br />
+                        <span id="ctl00_mainCopy_Label1">Este documento es solamente informativo y carece de cualquier validéz oficial</span>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <span id="ctl00_mainCopy_Lbl_Kardex"><style>
+                              table.bottomBorder{background-color:WhiteSmoke;font-size:xx-small;text-align:center;border-collapse:collapse;}
+                              table.bottomBorder td {border-bottom: 1px solid TEAL;padding:1px;}
+                            </style><center><table width="100%" class="bottomBorder"><tr><td colspan="6" style="background-color: Maroon; font-size: x-small; font-weight: bold; color: White; text-align: center">PRIMER SEMESTRE</td></tr><tr style="background-color: WhiteSmoke; font-size: xx-small; text-align: center; font-weight: bold;"><td Width="10px">Clave</td><td Width="150px">Materia</td><td Width="40px">Fecha</td><td Width="10px">Periodo</td><td Width="10px">Forma Eval.</td><td Width="10px">Calificacion</td></tr><tr><td>0101</td><td align="left">ÁLGEBRA</td><td>Jul 15 2024</td><td>24/2</td><td>ORD</td><td>6</td></tr><tr><td>0102</td><td align="left">FILOSOFÍA I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>8</td></tr><tr><td>0103</td><td align="left">COMPUTACIÓN BÁSICA I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>10</td></tr><tr><td>0104</td><td align="left">INGLÉS I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>9</td></tr><tr><td>0105</td><td align="left">EXPRESIÓN ORAL Y ESCRITA I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>9</td></tr><tr><td>0106</td><td align="left">DESARROLLO DE HABILIDADES DEL PENSAMIENTO</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>7</td></tr><tr><td>0107</td><td align="left">HISTORIA DE MÉXICO CONTEMPORÁNEO I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>8</td></tr><tr><td>0108</td><td align="left">DESARROLLO PERSONAL</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>8</td></tr><tr><td>0109</td><td align="left">ORIENTACIÓN JUVENIL Y PROFESIONAL I</td><td>Ene  6 2024</td><td>24/1</td><td>ORD</td><td>9</td></tr></table><br /></center><style>
+                              table.bottomBorder{background-color:WhiteSmoke;font-size:xx-small;text-align:center;border-collapse:collapse;}
+                              table.bottomBorder td {border-bottom: 1px solid TEAL;padding:1px;}
+                            </style><center><table width="100%" class="bottomBorder"><tr><td colspan="6" style="background-color: Maroon; font-size: x-small; font-weight: bold; color: White; text-align: center">SEGUNDO SEMESTRE</td></tr><tr style="background-color: WhiteSmoke; font-size: xx-small; text-align: center; font-weight: bold;"><td Width="10px">Clave</td><td Width="150px">Materia</td><td Width="40px">Fecha</td><td Width="10px">Periodo</td><td Width="10px">Forma Eval.</td><td Width="10px">Calificacion</td></tr><tr><td>0201</td><td align="left">GEOMETRÍA Y TRIGONOMETRÍA</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>6</td></tr><tr><td>0202</td><td align="left">FILOSOFÍA II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>8</td></tr><tr><td>0203</td><td align="left">COMPUTACIÓN BÁSICA II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>10</td></tr><tr><td>0204</td><td align="left">INGLÉS II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>7</td></tr><tr><td>0205</td><td align="left">EXPRESIÓN ORAL Y ESCRITA II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>8</td></tr><tr><td>0206</td><td align="left">BIOLOGÍA BÁSICA</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>7</td></tr><tr><td>0207</td><td align="left">HISTORIA DE MÉXICO CONTEMPORÁNEO II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>8</td></tr><tr><td>0208</td><td align="left">ORIENTACIÓN JUVENIL Y PROFESIONAL II</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>10</td></tr><tr><td>0210</td><td align="left">TECNICAS DE INVESTIGACIÓN DE CAMPO</td><td>Jul  8 2024</td><td>24/2</td><td>ORD</td><td>7</td></tr></table><br /></center><style>
+                              table.bottomBorder{background-color:WhiteSmoke;font-size:xx-small;text-align:center;border-collapse:collapse;}
+                              table.bottomBorder td {border-bottom: 1px solid TEAL;padding:1px;}
+                            </style><center><table width="100%" class="bottomBorder"><tr><td colspan="6" style="background-color: Maroon; font-size: x-small; font-weight: bold; color: White; text-align: center">TERCER SEMESTRE</td></tr><tr style="background-color: WhiteSmoke; font-size: xx-small; text-align: center; font-weight: bold;"><td Width="10px">Clave</td><td Width="150px">Materia</td><td Width="40px">Fecha</td><td Width="10px">Periodo</td><td Width="10px">Forma Eval.</td><td Width="10px">Calificacion</td></tr><tr><td>C301</td><td align="left">GEOMETRÍA ANALÍTICA</td><td>Ene 28 2025</td><td>25/1</td><td>EXT</td><td>6</td></tr><tr><td>C302</td><td align="left">FÍSICA I</td><td>Ene 21 2025</td><td>25/1</td><td>ETS</td><td>6</td></tr><tr><td>C303</td><td align="left">QUÍMICA I</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>7</td></tr><tr><td>C304</td><td align="left">INGLÉS III</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>7</td></tr><tr><td>C305</td><td align="left">COMUNICACIÓN CIENTÍFICA</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>8</td></tr><tr><td>C306</td><td align="left">DIBUJO TÉCNICO I</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>7</td></tr><tr><td>C307</td><td align="left">ENTORNO SOCIOECONÓMICO DE MÉXICO</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>9</td></tr><tr><td>C308</td><td align="left">METROLOGÍA Y TECNOLOGÍA DE MATERIALES</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>7</td></tr><tr><td>C309</td><td align="left">ELECTROTÉCNIA DE CORRIENTE CONTINUA Y CORRIENTE ALTERNA</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>6</td></tr><tr><td>C310</td><td align="left">PROCESOS DE SOLDADURA EN SISTEMAS MECATRÓNICOS</td><td>Ene 21 2025</td><td>25/1</td><td>ORD</td><td>10</td></tr></table><br /></center></span>
+            <br />
+        
+</div>
+        <br />
+        <span id="ctl00_mainCopy_Label6">Este documento es solamente informativo y carece de cualquier validéz oficial</span>
+    </div>   
+ 
+						</div>
+					</div>
+					<div id="leftcolumn">
+						<div id="leftcolcontainer">
+							<div id="subnav">	&nbsp;
+								<a href="#ctl00_subMenu_SkipLink"><img alt="" src="Imagenes/09.png" width="0" height="0" style="border-width:0px;" /></a><table id="ctl00_subMenu" class="ctl00_subMenu_5 ctl00_subMenu_2" cellpadding="0" cellspacing="0" border="0" style="font-size:11px;">
+	<tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos Generales" id="ctl00_subMenun0">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/info_alumnos/default.aspx" style="border-style:none;font-size:1em;">Datos Personales</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Información Personal" id="ctl00_subMenun1">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/info_alumnos/Datos_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Datos Personales</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Información Personal" id="ctl00_subMenun2">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/info_alumnos/DatosAlumnosMedicos.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Datos Médicos</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos Extracurriculares" id="ctl00_subMenun3">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/info_alumnos/Datos_Extracurriculares.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Datos Extracurriculares</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Pase Digital" id="ctl00_subMenun4">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Pase_Digital/Pase_Digital.aspx" style="border-style:none;font-size:1em;">Pase Digital</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Documentos del Expediente DAE" id="ctl00_subMenun5">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/info_alumnos/Expediente_DAE.aspx" style="border-style:none;font-size:1em;">Expediente DAE</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Acceso a la Plataforma de Cambios de Carrera" id="ctl00_subMenun6">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/CambiosCar/Default.aspx" style="border-style:none;font-size:1em;">Cambios de Carrera</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Acceso a la Plataforma de la Red Académica ISISA" id="ctl00_subMenun7">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/ISISA/Default.aspx" style="border-style:none;font-size:1em;">Red Académica ISISA</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Página para solicitar tramites probatorios de escolaridad" id="ctl00_subMenun8">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Tramites/Default.aspx" style="border-style:none;font-size:1em;">Tramites</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Página para solicitar tramites probatorios de escolaridad" id="ctl00_subMenun9">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Tramites/Solicitud_Tramite_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Solicitud</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Página para dar seguimiento a tus tramites probatorios de escolaridad" id="ctl00_subMenun10">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Tramites/Seguimiento_Tramite_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Seguimiento</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Página para dar seguimiento a tus citas" id="ctl00_subMenun11">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Citas/Default.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Citas</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Muestra tu información académica" id="ctl00_subMenun12">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/boleta/default.aspx" style="border-style:none;font-size:1em;">Datos académicos</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Historial Académico" id="ctl00_subMenun13">
+				<td><table class="item ctl00_subMenu_4 selected ctl00_subMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3 selected ctl00_subMenu_9" href="/Alumnos/boleta/kardex.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Kárdex</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Indicadores académicos" id="ctl00_subMenun14">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/boleta/Estado_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Estado General</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos generales" id="ctl00_subMenun15">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Dictamenes/Candidato.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Solicitud Dictamen</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Información Personal" id="ctl00_subMenun16">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Dictamenes/respuesta_dictamen.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Dictamen</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Informacion del periodo escolar en curso" id="ctl00_subMenun17">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Informacion_semestral/default.aspx" style="border-style:none;font-size:1em;">Inscripción Actual</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Horario de Clases" id="ctl00_subMenun18">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Informacion_semestral/Horario_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Horario</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Calificaciones de los departamentales" id="ctl00_subMenun19">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="index.html" style="border-style:none;font-size:1em;margin-left:20px;">Calificaciones</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Reinscripciones" id="ctl00_subMenun20">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Reinscripciones/default.aspx" style="border-style:none;font-size:1em;">Reinscripciones</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Cita de Reinscripcion" id="ctl00_subMenun21">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Reinscripciones/fichas_reinscripcion.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Cita de Reinscripcion</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Reinscripcion" id="ctl00_subMenun22">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Reinscripciones/reinscribir.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Reinscripcion</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Comprobante" id="ctl00_subMenun23">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Reinscripciones/Horario_Alumno.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Comprobante</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="E.T.S" id="ctl00_subMenun24">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/ETS/default.aspx" style="border-style:none;font-size:1em;">ETS</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Inscribir ETS" id="ctl00_subMenun25">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/ETS/inscripcion_ets.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Inscribir ETS</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Calificacion ETS" id="ctl00_subMenun26">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/ETS/calificaciones_ets.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Calificaciones</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Saberes Previamente Adquiridos" id="ctl00_subMenun27">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Saberes/DEFAULT.ASPX" style="border-style:none;font-size:1em;">Saberes Previamente Adquiridos</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Inscribir Saberes Previamente Adquiridos" id="ctl00_subMenun28">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Saberes/Inscripcion_Saberes.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Inscribir Saberes Previamente Adquiridos</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Calificaciones Saberes Previamente Adquiridos" id="ctl00_subMenun29">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Saberes/calificaciones_saberes.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Calificaciones</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Cursos de Recuperacion" id="ctl00_subMenun30">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Recuperacion/Default.aspx" style="border-style:none;font-size:1em;">Cursos de Recuperacion</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Inscribir Cursos de Recuperacion" id="ctl00_subMenun31">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Recuperacion/Inscripcion_Recuperacion.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Inscribir Cursos de Recuperacion</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Calificaciones Cursos de Recuperacion" id="ctl00_subMenun32">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Recuperacion/calificaciones_recuperacion.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Calificaciones</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos de Tutoria" id="ctl00_subMenun33">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Tutores/Default.aspx" style="border-style:none;font-size:1em;">Tutores</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos del Profesor Tutor Actual" id="ctl00_subMenun34">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/tutores/Datos_Tutor.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Tutor Actual</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Comentarios realizados por el tutor del alumno" id="ctl00_subMenun35">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/tutores/comentarios.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Comentarios</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Evaluación al profesor tutor" id="ctl00_subMenun36">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/tutores/Evaluacion_Tutores.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Evaluación</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Datos de Evaluacion" id="ctl00_subMenun37">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Evaluacion_Docente/Default.aspx" style="border-style:none;font-size:1em;">Evaluacion Profesor</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%" class="ctl00_subMenu_5">
+			<tr style="height:0px;">
+				<td></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Evaluacion Profesores" id="ctl00_subMenun38">
+				<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/Evaluacion_docente/califica_profe.aspx" style="border-style:none;font-size:1em;margin-left:20px;">Evaluación</a></td>
+					</tr>
+				</table></td>
+			</tr><tr style="height:0px;">
+				<td></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Cambio de correo personal" id="ctl00_subMenun39">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/CambioCorreoPersonal.aspx" style="border-style:none;font-size:1em;">Correo personal</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr><tr onmouseover="Menu_HoverRoot(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(event)" title="Cambio de Contraseña de acceso" id="ctl00_subMenun40">
+		<td><table class="item ctl00_subMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="white-space:nowrap;width:100%;"><a class="ctl00_subMenu_1 item ctl00_subMenu_3" href="/Alumnos/cambia_clave.aspx" style="border-style:none;font-size:1em;">Clave de acceso</a></td>
+			</tr>
+		</table></td>
+	</tr><tr style="height:0px;">
+		<td></td>
+	</tr>
+</table><a id="ctl00_subMenu_SkipLink"></a>
+							</div>
+							
+								
+                                <br />
+                                <div class="sidebarcontainer" style="width: 125px; height: 40%">
+                                    <div id="ctl00_leftColumn_LogOut">
+                                        <LoggedInTemplate>
+                                            <a id="ctl00_leftColumn_LoginStatusSession" href="javascript:__doPostBack('ctl00$leftColumn$LoginStatusSession$ctl00','')" style="display:inline-block;width:110px;">Cerrar sesión</a>
+                                            <span id="ctl00_leftColumn_LoginNameSession" style="display:inline-block;color:#FF8000;width:116px;">2024090878</span>
+                                        </LoggedInTemplate>
+                                    </div>
+                                    
+                                </div>
+							
+                            &nbsp;
+						</div>
+					</div>
+				</div>
+				<div id="rightcolumn">
+					<div id="rightcolcontainer">
+						
+							
+                            
+                            <br />
+                            <div class="sidebarcontainer" style="font-size:smaller">
+                                <h4>
+                                    Accesos r&aacute;pidos</h4>
+                               
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+
+                                
+
+                                <ul>
+                                    <li><a href="../../Academica/agenda_escolar.aspx" roles="ALUMNOS,Profesores,Profesores_Posgrado,ALUMNOS_BAJA,ALUMNOS_EGRESADOS,Alumnos_Posgrado,EJECUTIVOS,CEC,EVALUACION,ESTRUCTURA,CAMBIO,CATALOGOS,Padres,TUTORES,COORDINADOR_TUTORES,UPEV,ESTADISTICAS" title="Agenda escolar." style="font-size:smaller"> >> Agenda escolar </a></li>
+                                    <li><a href="../../Academica/horarios.aspx" roles="ALUMNOS,Profesores,Profesores_Posgrado,ALUMNOS_BAJA,ALUMNOS_EGRESADOS,Alumnos_Posgrado,EJECUTIVOS,CEC,EVALUACION,ESTRUCTURA,CAMBIO,CATALOGOS,Padres,TUTORES,COORDINADOR_TUTORES,UPEV,ESTADISTICAS" title="Explorar los horarios de clase." style="font-size:smaller"> >> Horarios de clase</a></li>
+                                    <li><a href="../../Academica/calendario_ets.aspx" roles="ALUMNOS,Profesores,Profesores_Posgrado,ALUMNOS_BAJA,ALUMNOS_EGRESADOS,Alumnos_Posgrado,EJECUTIVOS,CEC,EVALUACION,ESTRUCTURA,CAMBIO,CATALOGOS,Padres,TUTORES,COORDINADOR_TUTORES,UPEV,ESTADISTICAS" title="Explorar los horarios de ETS." style="font-size:smaller"> >> Horarios de ETS</a></li>
+                                </ul>
+                           
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->
+		                        <!-- ++++++++++++++++++++++++++++++++++++++++++ -->                           
+                            
+                            </div>
+						
+					</div>
+				</div>
+				<div id="footer">
+					&copy; 2024 SAES <a href="https://www.ipn.mx" title="Instituto Polit&eacute;cnico Nacional" target="_blank">IPN</a> <a href="https://www.ipn.mx/dae/" title="Direcci&oacute;n de Administraci&oacute;n Escolar" target="_blank">IPN-DAE</a></div>
+			</div>
+		</div>
+	
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_mainmenu_Data = new Object();
+ctl00_mainmenu_Data.disappearAfter = 500;
+ctl00_mainmenu_Data.horizontalOffset = 0;
+ctl00_mainmenu_Data.verticalOffset = 0;
+ctl00_mainmenu_Data.staticHoverClass = 'ctl00_mainmenu_9 hover';
+ctl00_mainmenu_Data.staticHoverHyperLinkClass = 'ctl00_mainmenu_8 hover';
+ctl00_mainmenu_Data.iframeUrl = '/WebResource.axd?d=RzNlk3k7YCHhWWdUsVu6YkiNdSv4kd6SlX5ObO8NLinWnYVU5VpyomZsrUsgX4uMBnrHvQP_gwzM7YpOzAsfbQ2jNcY1&t=638250420092864286';
+var ctl00_subMenu_Data = new Object();
+ctl00_subMenu_Data.disappearAfter = 500;
+ctl00_subMenu_Data.horizontalOffset = 0;
+ctl00_subMenu_Data.verticalOffset = 0;
+ctl00_subMenu_Data.hoverClass = 'ctl00_subMenu_16 hover';
+ctl00_subMenu_Data.hoverHyperLinkClass = 'ctl00_subMenu_15 hover';
+ctl00_subMenu_Data.staticHoverClass = 'ctl00_subMenu_14 hover';
+ctl00_subMenu_Data.staticHoverHyperLinkClass = 'ctl00_subMenu_13 hover';
+ctl00_subMenu_Data.iframeUrl = '/WebResource.axd?d=RzNlk3k7YCHhWWdUsVu6YkiNdSv4kd6SlX5ObO8NLinWnYVU5VpyomZsrUsgX4uMBnrHvQP_gwzM7YpOzAsfbQ2jNcY1&t=638250420092864286';
+//]]>
+</script>
+</form>
+</body>
+</html>
